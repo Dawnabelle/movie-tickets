@@ -8,21 +8,22 @@ function Ticket(name, time, age){
 }
 
 // formula to find correct movie ticket price
- Ticket.prototype.ticketPrice = function() {
+Ticket.prototype.ticketPrice = function() {
   //  standard ticket price
-   var cost = 18;
-   if (this.name !== "Trolls") {
-    //  new or old movie option
-     cost -= 2;
-   } if (this.time === 'matinee') {
-    //  minus cost of matinee, if necessary
-       cost -= 2;
-     }
-     if (this.age < 13 || this.age > 55) {
-      //  accounts for age
-          cost -= 2;
-    } return "$" + cost;
+  var cost = 18;
+  if (this.name !== "Trolls") {
+  //  new or old movie option
+    cost -= 2;
   }
+  if (this.time === 'matinee') {
+  //  minus cost of matinee, if necessary
+       cost -= 2;
+  }
+  if (this.age < 13 || this.age > 55) {
+  //  accounts for age
+       cost -= 2;
+  } return "$" + cost;
+}
 
 // user logic
   $(function(){
